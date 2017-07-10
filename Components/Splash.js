@@ -1,33 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS } from 'react-native';
-import Splash from './Splash';
-import Feed from './Feed';
-import SignUp from './SignUp';
 
-export default class LogIn extends React.Component {
-  goToFeed(){
-    this.props.navigator.push({
-      component: Feed
-    })
-  }
-
-  goToSignUp(){
-    this.props.navigator.push({
-      component: SignUp
-    })
-  }
-
+export default class Splash extends React.Component {
   render() {
     return (
-      <View style={styles.mainContainer}>
-        <Splash/>
-        <View style={styles.container}>
-          <Button
-          title="Log In"
-          onPress={()=>this.goToFeed}
-          />
-        </View>
-      </View>
+      <Image source={require('./Images/login-background.jpg')} style={styles.mainContainer}>
+        <Text style={styles.header}>trailMix</Text>
+        <Text style={styles.text}>Find friends for every adventure</Text>
+    </Image>
     );
   }
 }
