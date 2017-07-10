@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, TouchableHighlight, NavigatorIOS } from 'react-native';
+
+import Login from './Components/Login';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Image source={require('./Images/login-background.jpg')} style={styles.mainContainer}>
+      <Image source={require('./Components/Images/login-background.jpg')} style={styles.mainContainer}>
           <Text style={styles.header}>trailMix</Text>
           <Text style={styles.text}>Find friends for every adventure</Text>
           <TouchableHighlight
@@ -42,12 +44,14 @@ const styles = StyleSheet.create({
     color:'#F6DE53'
   },
   header: {
-    fontSize: 25,
+    fontSize: 64,
+    fontWeight: 'bold',
     textAlign: 'center',
-    margin: 20,
+    marginBottom: 20,
     color: '#FBFBFB'
   },
   text: {
+    fontSize: 24,
     textAlign: 'center',
     color: '#FBFBFB',
     marginBottom: 5,
