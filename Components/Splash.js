@@ -1,87 +1,50 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS } from 'react-native';
 
+import Login from './Login'
+
 export default class Splash extends React.Component {
+  goToLogin(){
+    this.props.navigator.push({
+      component: Login
+    })
+  }
+
   render() {
     return (
-      <Image source={require('./Images/login-background.jpg')} style={styles.mainContainer}>
+      <Image source={require('./Images/login-background.jpg')} >
         <Text style={styles.header}>trailMix</Text>
         <Text style={styles.text}>Find friends for every adventure</Text>
+        <Button
+          title="Get Started"
+          style={styles.button}
+          onPress={()=> this.goToLogin()} />
     </Image>
     );
   }
 }
 const styles = StyleSheet.create({
-  lightGreen: {
-    color: '#418964',
-  },
-  darkGreen: {
-    color: '#0F483B'
-  },
-  medBlue: {
-    color: '#319898',
-  },
-  baseGray: {
-    color: '#d8d8d8'
-  },
-  baseWhite: {
-    color: '#ffffea'
-  },
-  orange: {
-    color: '#FDC250'
-  },
-  yellow:{
-    color:'#F6DE53'
-  },
   header: {
-    fontSize: 64,
-    fontWeight: 'bold',
+    fontSize: 25,
     textAlign: 'center',
-    marginBottom: 20,
+    margin: 20,
     color: '#FBFBFB'
   },
   text: {
-    fontSize: 24,
     textAlign: 'center',
     color: '#FBFBFB',
     marginBottom: 5,
   },
-  container: {
-    justifyContent: 'center',
-    padding: 20,
-    alignItems: 'center',
-    color:'#334d4d',
-    fontSize: 18
-  },
-  mainContainer: {
+  Splash: {
     flex: 1,
-    width: undefined,
-    height: undefined,
     backgroundColor: 'transparent',
+    alignItems: 'center',
     justifyContent: 'center',
-    alignItems: 'center'
-  },
-  title: {
-    fontSize: 35,
-    textAlign: 'center',
-    color: '#FBFBFB',
-    fontWeight: 'bold'
-  },
-  buttonText: {
-    fontSize: 18,
-    color: '#114D03',
-    alignSelf: 'center',
-    fontWeight: 'bold'
+    width: undefined,
+    height: undefined
   },
   button: {
-    height: 40,
-    flexDirection: 'row',
-    backgroundColor: 'white',
-    borderColor: 'white',
-    marginBottom: 5,
-    marginTop: 20,
-    padding: 20,
-    alignSelf: 'center',
-    justifyContent: 'center'
-  }
+    height: 10,
+    width: 100
+  },
 });
