@@ -19,7 +19,8 @@ export default class LogIn extends React.Component {
 
   render() {
     return (
-      <Image source={require('./Images/login-background.jpg')} style={styles.container}>
+      <View style={styles.container}>
+        <Splash />
         <View style={styles.Login}>
           <TextInput
             placeholder="username"
@@ -34,7 +35,7 @@ export default class LogIn extends React.Component {
             style={styles.button}
             onPress={()=> this.goToSignUp()} />
         </View>
-      </Image>
+      </View>
     );
   }
 }

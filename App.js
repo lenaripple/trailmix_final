@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, TouchableHighlight, NavigatorIOS } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button,  NavigatorIOS } from 'react-native';
 
-import Login from './Components/Login';
+// import Login from './Components/Login';
 import Splash from './Components/Splash';
 
 export default class App extends React.Component {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <NavigatorIOS
           initialRoute={{
-          component: Login,
+          component: Splash,
           title: 'Home',
           }}
           style={{flex: 1}}
