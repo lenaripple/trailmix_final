@@ -10,7 +10,6 @@ export default class LogIn extends React.Component {
       component: Feed
     })
   }
-
   goToSignUp(){
     this.props.navigator.push({
       component: SignUp
@@ -45,35 +44,31 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     alignItems: 'center',
     justifyContent: 'center',
-    width: undefined,
-    height: undefined
-},
-Login: {
-  flex: 10,
-  width: '100%',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: 5,
-},
-input : {
-  height: 40,
-  width: '100%',
-  borderColor: '#FFFFF3',
-  borderWidth: 1,
-  textAlign: 'center',
-  color: '#5CE6D6',
-  marginTop: 15
-},
-button: {
-  height: 10,
-  width: 100
-},
-newAccount: {
-  height: 100,
-  width: 500
-},
-newAccountButton: {
-  width: 100,
-  height: 100
-}
+  },
+  Login: {
+    flex: 10,
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
+  },
+  input : {
+    height: 40,
+    width: '100%',
+    textAlign: 'center',
+    color: '#5CE6D6',
+    marginTop: 15
+  },
+  button: {
+    height: 10,
+    width: 100
+  },
+  newAccount: {
+    height: 100,
+    width: 500
+  },
+  newAccountButton: {
+    width: 100,
+    height: 100
+  }
 });
