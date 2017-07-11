@@ -1,6 +1,7 @@
 import express from 'express';
 import constants from './config/constants';
 import './config/database';
+import middlewareConfig from './config/middleware';
 
 console.log(constants);
 

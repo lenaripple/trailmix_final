@@ -117,6 +117,10 @@ var _constants2 = _interopRequireDefault(_constants);
 
 __webpack_require__(3);
 
+var _middleware = __webpack_require__(5);
+
+var _middleware2 = _interopRequireDefault(_middleware);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.log(_constants2.default);
@@ -172,6 +176,61 @@ _mongoose2.default.connection.once('open', () => console.log('mongodb is running
 /***/ (function(module, exports) {
 
 module.exports = require("mongoose");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _morgan = __webpack_require__(6);
+
+var _morgan2 = _interopRequireDefault(_morgan);
+
+var _bodyParser = __webpack_require__(7);
+
+var _bodyParser2 = _interopRequireDefault(_bodyParser);
+
+var _compression = __webpack_require__(8);
+
+var _compression2 = _interopRequireDefault(_compression);
+
+var _helmet = __webpack_require__(9);
+
+var _helmet2 = _interopRequireDefault(_helmet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = app => {};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("morgan");
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("body-parser");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("compression");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = require("helmet");
 
 /***/ })
 /******/ ]);
