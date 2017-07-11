@@ -14,6 +14,10 @@ export default class Feed extends React.Component {
     return (
       <View style={styles.container}>
       <Text>EventFeed Here</Text>
+      <Button
+      title="Add an Event"
+      color="#FCF9FC"
+      onPress={()=>this.goToAddEvent()} />
       </View>
     );
   }

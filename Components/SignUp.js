@@ -17,6 +17,9 @@ export default class SignUp extends React.Component {
           <TextInput
             placeholder="username"
             style={styles.input} />
+            <TextInput
+              placeholder="password"
+              style={styles.input} />
           <Button
           title="Log In"
           color="#FCF9FC"
