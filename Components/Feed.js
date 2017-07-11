@@ -21,35 +21,11 @@ export default class Feed extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'transparent',
+    flex:1,
+    flexDirection: 'column',
+    backgroundColor: '#7DA46D',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  Login: {
-    flex: 10,
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 5,
-  },
-  input : {
-    height: 40,
-    width: '100%',
-    textAlign: 'center',
-    color: '#5CE6D6',
-    marginTop: 15
-  },
-  button: {
-    height: 10,
-    width: 100
-  },
-  newAccount: {
-    height: 100,
-    width: 500
-  },
-  newAccountButton: {
-    width: 100,
-    height: 100
+    color: '#FCF9FC'
   }
 });
