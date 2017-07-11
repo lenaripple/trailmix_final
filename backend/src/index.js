@@ -3,9 +3,13 @@ import constants from './config/constants';
 import './config/database';
 import middlewareConfig from './config/middleware';
 
-console.log(constants);
+const app = express();
 
-const app = express()
+middlewareConfig(app);
+
+app.get('/', (req, res) => {
+  res.send('Hello world')
+});
 
 app.listen(constants.PORT, err => {
   if (err) {

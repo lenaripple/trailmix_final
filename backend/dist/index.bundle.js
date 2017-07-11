@@ -123,9 +123,13 @@ var _middleware2 = _interopRequireDefault(_middleware);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_constants2.default);
-
 const app = (0, _express2.default)();
+
+(0, _middleware2.default)(app);
+
+app.get('/', (req, res) => {
+  res.send('Hello world');
+});
 
 app.listen(_constants2.default.PORT, err => {
   if (err) {
@@ -206,7 +210,21 @@ var _helmet2 = _interopRequireDefault(_helmet);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = app => {};
+const isDev = process.env.NODE_ENV === 'development';
+const isProd = process.env.NODE_ENV === 'production';
+
+exports.default = app => {
+  if (isProd) {
+    app.use((0, _compression2.default)());
+    app.use((0, _helmet2.default)());
+  }
+  app.use(_bodyParser2.default.json());
+  app.use(_bodyParser2.default.urlencoded({ extended: true }));
+
+  if (isDev) {
+    app.use((0, _morgan2.default)('dev'));
+  }
+};
 
 /***/ }),
 /* 6 */
