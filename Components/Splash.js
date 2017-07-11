@@ -17,6 +17,7 @@ export default class Splash extends React.Component {
         <Text style={styles.text}>Find friends for every adventure</Text>
         <Button
           title="Get Started"
+          color="#FCF9FC"
           style={styles.button}
           onPress={()=> this.goToLogin()} />
       </Image>
