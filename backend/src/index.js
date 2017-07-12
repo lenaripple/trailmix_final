@@ -20,4 +20,4 @@ app.listen(constants.PORT, err => {
   } else {
     console.log(`server running on ${constants.PORT}, server running on ${process.env.NODE_ENV}`);
   }
-})
+});

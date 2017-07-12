@@ -1,8 +1,10 @@
 import mongoose, {Schema} from 'mongoose';
 import validator from 'validator';
-import { passwordReg } from './user.validation'
+import { passwordReg } from './user.validation';
+import constants from '../../config/constants';
 
-const UserSchema = new Schema({
+const UserSchema = new Schema(
+  {
   email: {
     type:String,
     unique: true,

@@ -1,8 +1,10 @@
 import { Router } from 'express';
+import validate from 'express-validation';
 import * as userController from './user.controller';
+import userValidation from './user.validation';
 
 const routes = new Router();
 
-routes.post('/signUp', userController.signUp);
+routes.post('/signup', validate(userValidation.signup), userController.signUp);
 
 export default routes;
