@@ -2,13 +2,11 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput } from 'react-native';
 
 import AddEvent from './AddEvent';
-import Login from './Login';
+import Feed from './Feed';
 import NavMenu from './NavMenu';
 import Home from './Home';
-import Search from './Search';
 
-
-export default class Feed extends React.Component {
+export default class Search extends React.Component {
   constructor(){
     super()
     this.goToHome = this.goToHome.bind(this)
@@ -43,15 +41,8 @@ export default class Feed extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
-          <Text>EventFeed Here</Text>
-          <Button
-          title="Add an Event"
-          color="#FCF9FC"
-          onPress={()=>this.goToAddEvent()} />
-        </ScrollView>
+        <Text> Search</Text>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-
       </View>
     );
   }

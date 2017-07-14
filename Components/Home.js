@@ -1,14 +1,12 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput } from 'react-native';
 
 import AddEvent from './AddEvent';
-import Login from './Login';
+import Feed from './Feed';
 import NavMenu from './NavMenu';
-import Home from './Home';
 import Search from './Search';
 
-
-export default class Feed extends React.Component {
+export default class Home extends React.Component {
   constructor(){
     super()
     this.goToHome = this.goToHome.bind(this)
@@ -43,15 +41,8 @@ export default class Feed extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ScrollView>
-          <Text>EventFeed Here</Text>
-          <Button
-          title="Add an Event"
-          color="#FCF9FC"
-          onPress={()=>this.goToAddEvent()} />
-        </ScrollView>
+        <Text>Home</Text>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-
       </View>
     );
   }
@@ -64,6 +55,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#7DA46D',
     alignItems: 'center',
     justifyContent: 'center',
-    color: '#FCF9FC'
+  },
+  Login: {
+    width: '100%',
+    alignItems: 'center',
+  },
+  input : {
+    height: 40,
+    width: '100%',
+    textAlign: 'center',
+    color: '#5CE6D6',
+    marginTop: 10
   }
 });
