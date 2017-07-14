@@ -60,32 +60,31 @@ export default class AddEvent extends React.Component {
             maximumDate={new Date('12/31/2018')}
             placeholder='Date'/>
           <InputField style={styles.smText}
-            ref="genLocation"
-            label="Vague Location"
-            placeholder="Public"
-          />
-          <InputField style={styles.smText}
-            ref="specLocation"
-            label="Specific Location"
-            placeholder="Private"
-          />
-          <InputField style={styles.smText}
-            ref="activity"
-            label="Activity"
-            placeholder="What are you going to do?"
+            ref="location"
+            label="Location"
+            placeholder="Location"
           />
           <InputField style={styles.smText}
             ref="description"
-            label="Public Description"
-            placeholder="Pubic"
+            label="escription"
+            placeholder="Description"
           />
           <InputField style={styles.smText}
             ref="extra"
             label="Extras"
             multiline={true}
-            placeholder="Anything else? Private"
+            placeholder="Anything else?"
+          />
+          <InputField style={styles.smText}
+            ref="rating"
+            label="Rating"
+            placeholder="How intense?"
           />
         </Form>
+        <Button
+          onPress={this.goToFeed}
+          title="Submit"
+        />
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
        </View>
     );
@@ -94,11 +93,19 @@ export default class AddEvent extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    padding: 20,
+    // padding: 20,
     flexDirection: 'column',
     backgroundColor: '#7DA46D',
     justifyContent: 'center'
   },
+  // container: {
+  //   flex:1,
+  //   flexDirection: 'column',
+  //   backgroundColor: '#7DA46D',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  //   color: '#FCF9FC'
+  // }
   form:{
     marginTop:50
   },

@@ -12,15 +12,18 @@ export default class Splash extends React.Component {
 
   render() {
     return (
-      <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
-        <Text style={styles.header}>trailMix</Text>
-        <Text style={styles.text}>Find friends for every adventure</Text>
-        <Button
-          title="Get Started"
-          color="#FCF9FC"
-          style={styles.button}
-          onPress={()=> this.goToLogin()} />
-      </Image>
+      <View>
+        <Image
+         source={require('./Images/login-background.jpg')} style={styles.Splash}>
+          <Text style={styles.header}>trailMix</Text>
+          <Text style={styles.text}>Find friends for every adventure</Text>
+          <Button
+            title="Get Started"
+            color="#FCF9FC"
+            style={styles.button}
+            onPress={()=> this.goToLogin()} />
+        </Image>
+      </View>
     );
   }
 }
@@ -43,7 +46,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: undefined,
-    height: undefined
+    height: undefined,
+    opacity: .7
   },
   // button: {
   //   // height: 40,

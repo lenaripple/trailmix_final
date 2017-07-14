@@ -51,7 +51,6 @@ export default class Feed extends React.Component {
           onPress={()=>this.goToAddEvent()} />
         </ScrollView>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-
       </View>
     );
   }

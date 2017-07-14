@@ -12,7 +12,7 @@ export default class NavMenu extends Component{
         <Image style={styles.img} source={require('./Images/outdoor/png/map.png')}/>
       </TouchableHighlight>
       <TouchableHighlight onPress={this.props.goHome}>
-        <Image style={styles.img} source={require('./Images/outdoor/png/cabin.png')}/>
+        <Image style={styles.img} source={require('./Images/270886-outdoors/png/tent-2.png')}/>
       </TouchableHighlight>
       <TouchableHighlight onPress={this.props.goSearch}>
         <Image style={styles.img} source={require('./Images/outdoor/png/compass.png')}/>
@@ -24,6 +24,9 @@ export default class NavMenu extends Component{
 
 const styles = StyleSheet.create({
   bottombar: {
+    flex: 1,
+    position: 'absolute',
+    bottom: 0,
     flexDirection: 'row',
     height: 60,
     width: '100%',
