@@ -1,5 +1,7 @@
 {
   "expo": {
+    "name": "trailmix_final",
+    "slug": "trailmix-final",
     "sdkVersion": "18.0.0"
   }
 }
