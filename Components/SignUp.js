@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight, ScrollView } from 'react-native';
 
 import Feed from './Feed';
 import Login from './Login';
@@ -13,7 +13,9 @@ export default class SignUp extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        keyboardDismissMode="on-drag">
         <View style={styles.Login}>
           <TextInput
             placeholder="Email"
@@ -37,7 +39,7 @@ export default class SignUp extends React.Component {
             <Text style={styles.btnText}>Log In</Text>
            </TouchableHighlight>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

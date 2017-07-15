@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight, ScrollView} from 'react-native';
 import Splash from './Splash';
 import Feed from './Feed';
 import SignUp from './SignUp';
@@ -20,7 +20,10 @@ export default class LogIn extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        keyboardDismissMode="on-drag"
+        >
         <View style={styles.Login}>
           <TextInput
             placeholder="email"
@@ -43,7 +46,7 @@ export default class LogIn extends React.Component {
             <Text style={styles.btnText}>Create a New Account</Text>
           </TouchableHighlight>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -57,7 +60,6 @@ const styles = StyleSheet.create({
   },
   Login: {
     width: '100%',
-    alignItems: 'center',
   },
   input : {
     height: 40,
@@ -69,8 +71,6 @@ const styles = StyleSheet.create({
   signup: {
     marginTop: 50,
     width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   btnText: {
     fontSize: 18,

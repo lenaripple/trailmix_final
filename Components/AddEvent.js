@@ -48,26 +48,28 @@ export default class AddEvent extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        keyboardDismissMode="interactive">
         <ScrollView style={styles.container}>
           <Form
             style={styles.form}
             ref='newEventForm'
             label='Event Information'>
-            <InputField style={styles.smText}
+            <InputField
               ref="title"
               placeholder="Event Title"
             />
-            <DatePickerField style={styles.smText}
+            <DatePickerField
               ref='date'
               minimumDate={new Date()}
               maximumDate={new Date('12/31/2018')}
               placeholder='Date'/>
-            <InputField style={styles.smText}
+            <InputField
               ref="location"
               placeholder="Location"
             />
-            <PickerField style={styles.smText}
+            <PickerField
               label='Primary Activity'
               options={{
                 "hiking":'Hiking',
@@ -77,17 +79,17 @@ export default class AddEvent extends React.Component {
                 "other": 'Something else'
               }}
             />
-            <InputField style={styles.smText}
+            <InputField
               ref="other"
               multiline={true}
               placeholder="If you selected 'something else', tell us what."
             />
-            <InputField style={styles.smText}
+            <InputField
               ref="description"
               placeholder="Description"
               multiline={true}
             />
-            <InputField style={styles.smText}
+            <InputField
               ref="extra"
               placeholder="Anything else?"
               multiline={true}
@@ -101,7 +103,7 @@ export default class AddEvent extends React.Component {
           </TouchableHighlight>
         </ScrollView>
           <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -112,18 +114,14 @@ const styles = StyleSheet.create({
   },
   form:{
     color: '#FBFBFB',
-  },
-  input : {
-    height: 30,
-    width: '100%',
-    textAlign: 'center',
+    margin: 10,
   },
   btnText: {
     fontSize: 18,
     alignSelf: 'center',
   },
   btn: {
-    margin: 20,
+    margin: 10,
     height: 40,
     flexDirection: 'row',
     backgroundColor: 'rgba(250, 250, 250, 0.72)',
