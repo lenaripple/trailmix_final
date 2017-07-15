@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TouchableHighlight } from 'react-native';
 
 import Login from './Login'
 
@@ -14,13 +14,16 @@ export default class Splash extends React.Component {
   render() {
     return (
       <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
-        <Text style={styles.header}>trailMix</Text>
-        <Text style={styles.text}>Find friends for every adventure</Text>
-        <Button
-          title="Get Started"
-          color="#FCF9FC"
-          style={styles.button}
-          onPress={()=> this.goToLogin()} />
+        <View style={styles.overlay}>
+          <Text style={styles.header}>trailMix</Text>
+          <Text style={styles.text}>Find friends for every adventure</Text>
+          <TouchableHighlight
+            style={styles.btn}
+            onPress={()=> this.goToLogin()}
+            underlayColor="none">
+            <Text style={styles.btnText}>Get Started</Text>
+          </TouchableHighlight>
+        </View>
       </Image>
     );
   }
@@ -34,35 +37,34 @@ const styles = StyleSheet.create({
     opacity: 1
   },
   text: {
-    fontSize: 25,
+    fontSize: 22,
     textAlign: 'center',
     margin: 20,
     color: '#FBFBFB',
     opacity: 1
   },
   Splash: {
-    flex: 1,
-    backgroundColor: 'transparent',
-    alignItems: 'center',
-    justifyContent: 'center',
     width: undefined,
     height: undefined,
-    opacity: .7
-
   },
-  // button: {
-  //   // height: 40,
-  //   // flexDirection: 'row',
-  //   backgroundColor: 'white',
-  //   borderColor: 'white',
-  //   marginBottom: 5,
-  //   marginTop: 20,
-  //   padding: 20,
-  //   alignSelf: 'center',
-  //   // justifyContent: 'center',
-  //   fontSize: 18,
-  //   color: '#114D03',
-  //   alignSelf: 'center',
-  //   fontWeight: 'bold'
-  // }
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,.6)',
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  btnText: {
+    fontSize: 18,
+    color: '#FBFBFB',
+    alignSelf: 'center',
+  },
+  btn: {
+    margin:29,
+    height: 40,
+    flexDirection: 'row',
+    backgroundColor: 'rgba(126, 165, 111, 0.63)',
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  }
 });
