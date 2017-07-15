@@ -20,21 +20,18 @@ export default class Feed extends React.Component {
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
-      navigationBarHidden: true,
       title: "Events"
     })
   }
   goToHome(){
     this.props.navigator.push({
       component: Home,
-      navigationBarHidden: true,
       title: "Profile"
     })
   }
   goToSearch(){
     this.props.navigator.push({
       component: Search,
-      navigationBarHidden: true,
       title: "Search Events"
     })
   }
@@ -46,13 +43,17 @@ export default class Feed extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <ScrollView>
-          <Text>EventFeed Here</Text>
-          <Button
-          title="Add an Event"
-          color="#FCF9FC"
-          onPress={()=>this.goToAddEvent()} />
+      <View style={styles.mainContainer}>
+        <ScrollView style={styles.container}>
+          <View style={styles.list}>
+            <Text>test test test tes tes tes test</Text>
+          </View>
+          <View style={styles.list}>
+            <Text>test test test tes tes tes test</Text>
+          </View>
+          <View style={styles.list}>
+            <Text>test test test tes tes tes test</Text>
+          </View>
         </ScrollView>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
       </View>
@@ -61,12 +62,19 @@ export default class Feed extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  mainContainer:{
+    // padding:10,
+    flex:1
+  },
   container: {
     flex:1,
-    flexDirection: 'column',
     backgroundColor: '#7DA46D',
-    alignItems: 'center',
-    justifyContent: 'center',
-    color: '#FCF9FC'
+  },
+  list: {
+    height: 120,
+    backgroundColor: '#FBFBFB',
+    position: 'relative',
+    borderWidth:1,
+    borderColor: 'darkgrey'
   }
 });

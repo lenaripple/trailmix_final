@@ -25,21 +25,18 @@ export default class AddEvent extends React.Component {
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
-      navigationBarHidden: true,
       title: "Events"
     })
   }
   goToHome(){
     this.props.navigator.push({
       component: Home,
-      navigationBarHidden: true,
       title: "Profile"
     })
   }
   goToSearch(){
     this.props.navigator.push({
       component: Search,
-      navigationBarHidden: true,
       title: "Search Events"
     })
   }
@@ -107,7 +104,7 @@ export default class AddEvent extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    paddingTop: 64,
+    marginTop: 64,
     backgroundColor: '#FBFBFB',
   },
   input : {
@@ -127,7 +124,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   btn: {
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginTop: 160,
     height: 40,
     flexDirection: 'row',
     backgroundColor: '#7DA46D',

@@ -18,21 +18,18 @@ export default class Search extends React.Component {
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
-      navigationBarHidden: true,
       title: "Events"
     })
   }
   goToHome(){
     this.props.navigator.push({
       component: Home,
-      navigationBarHidden: true,
       title: "Profile"
     })
   }
   goToSearch(){
     this.props.navigator.push({
       component: Search,
-      navigationBarHidden: true,
       title: "Search Events"
     })
   }

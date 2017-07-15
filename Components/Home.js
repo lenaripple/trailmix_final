@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput} from 'react-native';
 
 import AddEvent from './AddEvent';
 import Feed from './Feed';
@@ -18,21 +18,18 @@ export default class Home extends React.Component {
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
-      navigationBarHidden: true,
       title:"Events"
     })
   }
   goToHome(){
     this.props.navigator.push({
       component: Home,
-      navigationBarHidden: true,
       title: "Profile"
     })
   }
   goToSearch(){
     this.props.navigator.push({
       component: Search,
-      navigationBarHidden: true,
       title: "Search"
     })
   }
@@ -45,7 +42,18 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Home</Text>
+        <View style={styles.profile}>
+          <Image style={styles.img} resizeMode="contain" source={require('./Images/basics/png/profile.png')}/>
+          <Text>Hi Lena!</Text>
+        </View>
+        <View style={styles.body}>
+          <Text style={styles.list}>
+            Events you hosted:
+          </Text>
+          <Text style={styles.list}>
+            Events you attended:
+          </Text>
+        </View>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
       </View>
     );
@@ -55,20 +63,21 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    flexDirection: 'column',
     backgroundColor: '#7DA46D',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  Login: {
-    width: '100%',
-    alignItems: 'center',
+  profile:{
+    marginTop:64,
+    height: 250,
+    justifyContent:"center",
+    alignItems: "center",
+    },
+  img:{
+    height: 100,
+    marginBottom: 20
   },
-  input : {
-    height: 40,
-    width: '100%',
-    textAlign: 'center',
-    color: '#5CE6D6',
-    marginTop: 10
+  list: {
+    height: 120,
+    backgroundColor: 'transparent',
+    position: 'relative',
   }
 });

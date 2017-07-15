@@ -5,16 +5,24 @@ export default class NavMenu extends Component{
   render(){
   return(
     <View style={styles.bottombar}>
-      <TouchableHighlight onPress={this.props.goFeed}>
+      <TouchableHighlight
+        underlayColor="none"
+        onPress={this.props.goFeed}>
         <Image style={styles.img} source={require('./Images/basics/png/menu.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight onPress={this.props.goAddEvent}>
+      <TouchableHighlight
+        underlayColor="none"
+        onPress={this.props.goAddEvent}>
         <Image style={styles.img} source={require('./Images/basics/png/add.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight onPress={this.props.goHome}>
+      <TouchableHighlight
+        underlayColor="none"
+        onPress={this.props.goHome}>
         <Image style={styles.img} source={require('./Images/camping/png/tent.png')}/>
       </TouchableHighlight>
-      <TouchableHighlight onPress={this.props.goSearch}>
+      <TouchableHighlight
+        underlayColor="none"
+        onPress={this.props.goSearch}>
         <Image style={styles.img} source={require('./Images/basics/png/search.png')}/>
       </TouchableHighlight>
     </View>
@@ -37,7 +45,7 @@ const styles = StyleSheet.create({
   img : {
     marginTop: 5,
     marginBottom: 5,
-    width: 35,
+    width: 32,
     height: 'auto',
     flex: 1,
     color: '#FBFBFB'
