@@ -6,16 +6,16 @@ export default class NavMenu extends Component{
   return(
     <View style={styles.bottombar}>
       <TouchableHighlight onPress={this.props.goFeed}>
-        <Image style={styles.img} source={require('./Images/outdoor/png/trees.png')}/>
+        <Image style={styles.img} source={require('./Images/basics/png/menu.png')}/>
       </TouchableHighlight>
       <TouchableHighlight onPress={this.props.goAddEvent}>
-        <Image style={styles.img} source={require('./Images/outdoor/png/map.png')}/>
+        <Image style={styles.img} source={require('./Images/basics/png/add.png')}/>
       </TouchableHighlight>
       <TouchableHighlight onPress={this.props.goHome}>
-        <Image style={styles.img} source={require('./Images/270886-outdoors/png/tent-2.png')}/>
+        <Image style={styles.img} source={require('./Images/camping/png/tent.png')}/>
       </TouchableHighlight>
       <TouchableHighlight onPress={this.props.goSearch}>
-        <Image style={styles.img} source={require('./Images/outdoor/png/compass.png')}/>
+        <Image style={styles.img} source={require('./Images/basics/png/search.png')}/>
       </TouchableHighlight>
     </View>
   )
@@ -28,14 +28,16 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0,
     flexDirection: 'row',
-    height: 60,
+    height: 45,
     width: '100%',
     backgroundColor: 'darkgrey',
     alignSelf: 'flex-end',
     justifyContent: 'space-around'
   },
   img : {
-    width: 60,
+    marginTop: 5,
+    marginBottom: 5,
+    width: 35,
     height: 'auto',
     flex: 1,
     color: '#FBFBFB'

@@ -18,24 +18,28 @@ export default class Home extends React.Component {
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
-      navigationBarHidden: true
+      navigationBarHidden: true,
+      title:"Events"
     })
   }
   goToHome(){
     this.props.navigator.push({
       component: Home,
-      navigationBarHidden: true
+      navigationBarHidden: true,
+      title: "Profile"
     })
   }
   goToSearch(){
     this.props.navigator.push({
       component: Search,
-      navigationBarHidden: true
+      navigationBarHidden: true,
+      title: "Search"
     })
   }
   goToAddEvent(){
     this.props.navigator.push({
-      component: AddEvent
+      component: AddEvent,
+      title: "Create an Event"
     })
   }
   render() {

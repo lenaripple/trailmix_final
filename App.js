@@ -11,7 +11,7 @@ export default class App extends React.Component {
         <NavigatorIOS
           initialRoute={{
           component: Splash,
-          title: 'Home',
+          title: 'Welcome',
           }}
           style={{flex: 1}}
           />

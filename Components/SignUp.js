@@ -7,7 +7,8 @@ import Login from './Login';
 export default class SignUp extends React.Component {
   goToFeed(){
     this.props.navigator.push({
-      component: Feed
+      component: Feed,
+      title: "Events"
     })
   }
   render() {
@@ -15,13 +16,22 @@ export default class SignUp extends React.Component {
       <View style={styles.container}>
         <View style={styles.Login}>
           <TextInput
-            placeholder="username"
+            placeholder="Email"
+            style={styles.input} />
+          <TextInput
+            placeholder="First Name"
+            style={styles.input} />
+          <TextInput
+            placeholder="Last Name"
+            style={styles.input} />
+          <TextInput
+            placeholder="Username"
             style={styles.input} />
             <TextInput
               placeholder="password"
               style={styles.input} />
           <Button
-          title="Log In"
+          title="Create Account"
           color="#FCF9FC"
           onPress={()=>this.goToFeed()} />
         </View>

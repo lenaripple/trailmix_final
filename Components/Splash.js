@@ -6,24 +6,22 @@ import Login from './Login'
 export default class Splash extends React.Component {
   goToLogin(){
     this.props.navigator.push({
-      component: Login
+      component: Login,
+      title: "Log In"
     })
   }
 
   render() {
     return (
-      <View>
-        <Image
-         source={require('./Images/login-background.jpg')} style={styles.Splash}>
-          <Text style={styles.header}>trailMix</Text>
-          <Text style={styles.text}>Find friends for every adventure</Text>
-          <Button
-            title="Get Started"
-            color="#FCF9FC"
-            style={styles.button}
-            onPress={()=> this.goToLogin()} />
-        </Image>
-      </View>
+      <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
+        <Text style={styles.header}>trailMix</Text>
+        <Text style={styles.text}>Find friends for every adventure</Text>
+        <Button
+          title="Get Started"
+          color="#FCF9FC"
+          style={styles.button}
+          onPress={()=> this.goToLogin()} />
+      </Image>
     );
   }
 }
@@ -32,13 +30,15 @@ const styles = StyleSheet.create({
     fontSize: 35,
     textAlign: 'center',
     color: '#FBFBFB',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    opacity: 1
   },
   text: {
     fontSize: 25,
     textAlign: 'center',
     margin: 20,
-    color: '#FBFBFB'
+    color: '#FBFBFB',
+    opacity: 1
   },
   Splash: {
     flex: 1,
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     width: undefined,
     height: undefined,
     opacity: .7
+
   },
   // button: {
   //   // height: 40,

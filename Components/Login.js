@@ -7,12 +7,14 @@ import SignUp from './SignUp';
 export default class LogIn extends React.Component {
   goToFeed(){
     this.props.navigator.push({
-      component: Feed
+      component: Feed,
+      title: "Events"
     })
   }
   goToSignUp(){
     this.props.navigator.push({
-      component: SignUp
+      component: SignUp,
+      title: "Sign Up"
     })
   }
 
@@ -21,7 +23,7 @@ export default class LogIn extends React.Component {
       <View style={styles.container}>
         <View style={styles.Login}>
           <TextInput
-            placeholder="username"
+            placeholder="email"
             style={styles.input} />
           <TextInput
             placeholder="password"

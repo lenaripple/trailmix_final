@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
 
 import { Form,
   Separator,InputField, LinkField,
@@ -25,35 +25,40 @@ export default class AddEvent extends React.Component {
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
-      navigationBarHidden: true
+      navigationBarHidden: true,
+      title: "Events"
     })
   }
   goToHome(){
     this.props.navigator.push({
       component: Home,
-      navigationBarHidden: true
+      navigationBarHidden: true,
+      title: "Profile"
     })
   }
   goToSearch(){
     this.props.navigator.push({
       component: Search,
-      navigationBarHidden: true
+      navigationBarHidden: true,
+      title: "Search Events"
     })
   }
   goToAddEvent(){
     this.props.navigator.push({
-      component: AddEvent
+      component: AddEvent,
+      title: "Create an Event"
     })
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.header}>Add an Event</Text>
-        <Form style={styles.form} ref='newEventForm' label='New Event'>
+        <Form
+          style={styles.form}
+          ref='newEventForm'
+          label='Event Information'>
           <InputField style={styles.smText}
             ref="title"
-            label="Trip Title"
-            placeholder=""
+            placeholder="Event Title"
           />
           <DatePickerField ref='date'
             minimumDate={new Date()}
@@ -61,30 +66,38 @@ export default class AddEvent extends React.Component {
             placeholder='Date'/>
           <InputField style={styles.smText}
             ref="location"
-            label="Location"
             placeholder="Location"
+          />
+          <PickerField
+            label='Primary Activity'
+            options={{
+              "hiking":'Hiking',
+              "backpacking": 'Backpacking',
+              "climbing": 'Climbing',
+              "camping": 'camping',
+              "other": 'Something else'
+            }}
+          />
+          <InputField
+            ref="other"
+            placeholder="If you selected 'something else', tell us what the plan is."
           />
           <InputField style={styles.smText}
             ref="description"
-            label="escription"
             placeholder="Description"
+            multiline={true}
           />
           <InputField style={styles.smText}
             ref="extra"
-            label="Extras"
-            multiline={true}
             placeholder="Anything else?"
-          />
-          <InputField style={styles.smText}
-            ref="rating"
-            label="Rating"
-            placeholder="How intense?"
+            multiline={true}
           />
         </Form>
-        <Button
-          onPress={this.goToFeed}
-          title="Submit"
-        />
+        <TouchableHighlight
+          style={styles.btn}
+          onPress={this.goToFeed},
+          <Text style={styles.btnText}>Create Event</Text>
+        </TouchableHighlight>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
        </View>
     );
@@ -93,32 +106,36 @@ export default class AddEvent extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    // padding: 20,
-    flexDirection: 'column',
+    paddingTop: 64,
     backgroundColor: '#7DA46D',
-    justifyContent: 'center'
-  },
-  // container: {
-  //   flex:1,
-  //   flexDirection: 'column',
-  //   backgroundColor: '#7DA46D',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   color: '#FCF9FC'
-  // }
-  form:{
-    marginTop:50
   },
   input : {
-    height: 40,
+    height: 30,
     width: '100%',
     textAlign: 'center',
-    marginTop: 10
   },
   header: {
-    fontSize: 35,
+    fontSize: 25,
     textAlign: 'center',
     color: '#FBFBFB',
     fontWeight: 'bold'
-  }
+  },
+  btnText: {
+    fontSize: 18,
+    color: '#ff5e5b',
+    alignSelf: 'center',
+    fontWeight: 'bold'
+  },
+  btn: {
+    height: 40,
+    flexDirection: 'row',
+    backgroundColor: 'white',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 5,
+    marginBottom: 5,
+    marginTop: 20,
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
 });
