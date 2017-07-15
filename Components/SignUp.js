@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
 
 import Feed from './Feed';
 import Login from './Login';
@@ -30,10 +30,12 @@ export default class SignUp extends React.Component {
             <TextInput
               placeholder="password"
               style={styles.input} />
-          <Button
-          title="Create Account"
-          color="#FCF9FC"
-          onPress={()=>this.goToFeed()} />
+          <TouchableHighlight
+            style={styles.btn}
+            underlayColor="white"
+            onPress={()=>this.goToFeed()}>
+            <Text style={styles.btnText}>Log In</Text>
+           </TouchableHighlight>
         </View>
       </View>
     );
@@ -58,5 +60,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#5CE6D6',
     marginTop: 10
-  }
+  },
+  btnText: {
+    fontSize: 18,
+    alignSelf: 'center',
+  },
+  btn: {
+    margin: 20,
+    height: 40,
+    flexDirection: 'row',
+    backgroundColor: 'rgba(250, 250, 250, 0.72)',
+    alignSelf: 'stretch',
+    justifyContent: 'center'
+  },
 });
