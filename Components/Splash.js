@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     height: undefined,
   },
   overlay: {
-    backgroundColor: 'rgba(0,0,0,.6)',
+    backgroundColor: 'rgba(0,0,0,.5)',
     height: '100%',
     width: '100%',
     alignItems: 'center',

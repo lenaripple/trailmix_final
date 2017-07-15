@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput} from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, ScrollView} from 'react-native';
 
 import AddEvent from './AddEvent';
 import Feed from './Feed';
@@ -41,43 +41,55 @@ export default class Home extends React.Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.profile}>
-          <Image style={styles.img} resizeMode="contain" source={require('./Images/basics/png/profile.png')}/>
-          <Text>Hi Lena!</Text>
-        </View>
-        <View style={styles.body}>
-          <Text style={styles.list}>
-            Events you hosted:
-          </Text>
-          <Text style={styles.list}>
-            Events you attended:
-          </Text>
-        </View>
+      <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
+        <ScrollView style={styles.overlay}>
+          <View style={styles.profile}>
+            <Text style={{fontSize: 20,color: '#FBFBFB'}}>
+            Hi Lena!</Text>
+          </View>
+          <View style={styles.body}>
+            <Text style={styles.list}>
+              Events you hosted:
+            </Text>
+            <Text style={styles.list}>
+              Events you attended:
+            </Text>
+          </View>
+        </ScrollView>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-      </View>
+      </Image>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    backgroundColor: '#7DA46D',
+  Splash: {
+    width: undefined,
+    height: undefined,
+  },
+  overlay: {
+    backgroundColor: 'rgba(0,0,0,.35)',
+    height: '100%',
+    width: '100%',
   },
   profile:{
+    color: '#FBFBFB',
+    marginLeft: 20,
+    marginRight: 20,
     marginTop:64,
-    height: 250,
+    height: 150,
     justifyContent:"center",
     alignItems: "center",
     },
-  img:{
-    height: 100,
-    marginBottom: 20
-  },
   list: {
+    backgroundColor: 'rgba(126, 165, 111, 0.63)',
+    color: '#FBFBFB',
+    fontSize: 16,
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 10,
     height: 120,
-    backgroundColor: 'transparent',
     position: 'relative',
   }
 });

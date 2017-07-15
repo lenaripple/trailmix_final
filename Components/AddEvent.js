@@ -57,7 +57,8 @@ export default class AddEvent extends React.Component {
             ref="title"
             placeholder="Event Title"
           />
-          <DatePickerField ref='date'
+          <DatePickerField style={styles.smText}
+            ref='date'
             minimumDate={new Date()}
             maximumDate={new Date('12/31/2018')}
             placeholder='Date'/>
@@ -65,7 +66,7 @@ export default class AddEvent extends React.Component {
             ref="location"
             placeholder="Location"
           />
-          <PickerField
+          <PickerField style={styles.smText}
             label='Primary Activity'
             options={{
               "hiking":'Hiking',
@@ -75,7 +76,7 @@ export default class AddEvent extends React.Component {
               "other": 'Something else'
             }}
           />
-          <InputField
+          <InputField style={styles.smText}
             ref="other"
             placeholder="If you selected 'something else', tell us what."
           />
@@ -105,22 +106,18 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     marginTop: 64,
-    backgroundColor: '#FBFBFB',
+    backgroundColor: 'rgba(126, 165, 111, 0.63)',
+  },
+  form:{
+    color: '#FBFBFB',
   },
   input : {
     height: 30,
     width: '100%',
     textAlign: 'center',
   },
-  header: {
-    fontSize: 25,
-    textAlign: 'center',
-    color: '#7DA46D',
-    fontWeight: 'bold'
-  },
   btnText: {
     fontSize: 18,
-    color: '#FBFBFB',
     alignSelf: 'center',
   },
   btn: {
@@ -129,7 +126,7 @@ const styles = StyleSheet.create({
     marginTop: 160,
     height: 40,
     flexDirection: 'row',
-    backgroundColor: '#7DA46D',
+    backgroundColor: 'rgba(250, 250, 250, 0.72)',
     alignSelf: 'stretch',
     justifyContent: 'center'
   },

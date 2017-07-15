@@ -63,7 +63,6 @@ export default class Feed extends React.Component {
 
 const styles = StyleSheet.create({
   mainContainer:{
-    // padding:10,
     flex:1
   },
   container: {
@@ -71,10 +70,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#7DA46D',
   },
   list: {
+    backgroundColor: 'rgba(250, 250, 250, 0.72)',
+    color: '#FBFBFB',
+    fontSize: 16,
+    padding: 10,
+    marginLeft: 10,
+    marginRight: 10,
+    marginBottom: 5,
+    marginTop:5,
     height: 120,
-    backgroundColor: '#FBFBFB',
     position: 'relative',
-    borderWidth:1,
-    borderColor: 'darkgrey'
   }
 });
