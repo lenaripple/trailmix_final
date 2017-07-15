@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight, ScrollView } from 'react-native';
 
 import { Form,
   Separator,InputField, LinkField,
@@ -49,64 +49,66 @@ export default class AddEvent extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Form
-          style={styles.form}
-          ref='newEventForm'
-          label='Event Information'>
-          <InputField style={styles.smText}
-            ref="title"
-            placeholder="Event Title"
-          />
-          <DatePickerField style={styles.smText}
-            ref='date'
-            minimumDate={new Date()}
-            maximumDate={new Date('12/31/2018')}
-            placeholder='Date'/>
-          <InputField style={styles.smText}
-            ref="location"
-            placeholder="Location"
-          />
-          <PickerField style={styles.smText}
-            label='Primary Activity'
-            options={{
-              "hiking":'Hiking',
-              "backpacking": 'Backpacking',
-              "climbing": 'Climbing',
-              "camping": 'camping',
-              "other": 'Something else'
-            }}
-          />
-          <InputField style={styles.smText}
-            ref="other"
-            placeholder="If you selected 'something else', tell us what."
-          />
-          <InputField style={styles.smText}
-            ref="description"
-            placeholder="Description"
-            multiline={true}
-          />
-          <InputField style={styles.smText}
-            ref="extra"
-            placeholder="Anything else?"
-            multiline={true}
-          />
-        </Form>
-        <TouchableHighlight
-          style={styles.btn}
-          onPress={this.goToFeed}
-          underlayColor="white">
-          <Text style={styles.btnText}>Create Event</Text>
-        </TouchableHighlight>
-        <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-       </View>
+        <ScrollView style={styles.container}>
+          <Form
+            style={styles.form}
+            ref='newEventForm'
+            label='Event Information'>
+            <InputField style={styles.smText}
+              ref="title"
+              placeholder="Event Title"
+            />
+            <DatePickerField style={styles.smText}
+              ref='date'
+              minimumDate={new Date()}
+              maximumDate={new Date('12/31/2018')}
+              placeholder='Date'/>
+            <InputField style={styles.smText}
+              ref="location"
+              placeholder="Location"
+            />
+            <PickerField style={styles.smText}
+              label='Primary Activity'
+              options={{
+                "hiking":'Hiking',
+                "backpacking": 'Backpacking',
+                "climbing": 'Climbing',
+                "camping": 'camping',
+                "other": 'Something else'
+              }}
+            />
+            <InputField style={styles.smText}
+              ref="other"
+              multiline={true}
+              placeholder="If you selected 'something else', tell us what."
+            />
+            <InputField style={styles.smText}
+              ref="description"
+              placeholder="Description"
+              multiline={true}
+            />
+            <InputField style={styles.smText}
+              ref="extra"
+              placeholder="Anything else?"
+              multiline={true}
+            />
+          </Form>
+          <TouchableHighlight
+            style={styles.btn}
+            onPress={this.goToFeed}
+            underlayColor="white">
+            <Text style={styles.btnText}>Create Event</Text>
+          </TouchableHighlight>
+        </ScrollView>
+          <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
+      </View>
     );
   }
 }
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    marginTop: 64,
-    backgroundColor: 'rgba(126, 165, 111, 0.63)',
+    backgroundColor: '#7DA46D',
   },
   form:{
     color: '#FBFBFB',
@@ -121,9 +123,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   btn: {
-    marginLeft: 20,
-    marginRight: 20,
-    marginTop: 160,
+    margin: 20,
     height: 40,
     flexDirection: 'row',
     backgroundColor: 'rgba(250, 250, 250, 0.72)',
