@@ -80,7 +80,7 @@ export default class AddEvent extends React.Component {
           />
           <InputField
             ref="other"
-            placeholder="If you selected 'something else', tell us what the plan is."
+            placeholder="If you selected 'something else', tell us what."
           />
           <InputField style={styles.smText}
             ref="description"
@@ -95,7 +95,8 @@ export default class AddEvent extends React.Component {
         </Form>
         <TouchableHighlight
           style={styles.btn}
-          onPress={this.goToFeed},
+          onPress={this.goToFeed}
+          underlayColor="white">
           <Text style={styles.btnText}>Create Event</Text>
         </TouchableHighlight>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     paddingTop: 64,
-    backgroundColor: '#7DA46D',
+    backgroundColor: '#FBFBFB',
   },
   input : {
     height: 30,
@@ -117,24 +118,19 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 25,
     textAlign: 'center',
-    color: '#FBFBFB',
+    color: '#7DA46D',
     fontWeight: 'bold'
   },
   btnText: {
     fontSize: 18,
-    color: '#ff5e5b',
+    color: '#FBFBFB',
     alignSelf: 'center',
-    fontWeight: 'bold'
   },
   btn: {
+    margin: 20,
     height: 40,
     flexDirection: 'row',
-    backgroundColor: 'white',
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 5,
-    marginBottom: 5,
-    marginTop: 20,
+    backgroundColor: '#7DA46D',
     alignSelf: 'stretch',
     justifyContent: 'center'
   },
