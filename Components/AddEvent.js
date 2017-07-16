@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
   },
   container:{
     backgroundColor: '#7DA46D',
+    paddingBottom: 40
   },
   form:{
     color: '#FBFBFB',

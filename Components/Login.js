@@ -29,6 +29,7 @@ export default class LogIn extends React.Component {
             placeholder="email"
             style={styles.input} />
           <TextInput
+            secureTextEntry={true}
             placeholder="password"
             style={styles.input} />
           <TouchableHighlight
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: '100%',
     textAlign: 'center',
-    color: '#5CE6D6',
+    color: '#FBFBFB',
     marginTop: 10
   },
   signup: {

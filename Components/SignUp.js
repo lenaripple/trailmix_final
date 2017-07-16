@@ -30,6 +30,7 @@ export default class SignUp extends React.Component {
             placeholder="Username"
             style={styles.input} />
             <TextInput
+              secureTextEntry={true}
               placeholder="password"
               style={styles.input} />
           <TouchableHighlight
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
     height: 40,
     width: '100%',
     textAlign: 'center',
-    color: '#5CE6D6',
+    color: '#FBFBFB',
     marginTop: 10
   },
   btnText: {
