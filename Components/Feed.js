@@ -6,6 +6,7 @@ import Login from './Login';
 import NavMenu from './NavMenu';
 import Home from './Home';
 import Search from './Search';
+import EventPage from './EventPage';
 
 
 export default class Feed extends React.Component {
@@ -40,7 +41,14 @@ export default class Feed extends React.Component {
       component: AddEvent,
       title: "Create an Event"
     })
+    }
+  goToEventPage(){
+    this.props.navigator.push({
+      component: EventPage,
+      title: "Trip Page"
+    })
   }
+
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -60,9 +68,10 @@ export default class Feed extends React.Component {
               <Text style={styles.date}>Thursday, July 27</Text>
               <Text style={styles.location}>Boulder Canyon</Text>
               <View style={{flexDirection:"row"}}>
-                <Text style={styles.summary}>Going to Eater Rock - 11s and 12s</Text>
+                <Text style={styles.summary}>Going to Easter Rock - 11s and 12s</Text>
                 <TouchableHighlight
-                  style={styles.btn}>
+                  style={styles.btn}
+                  onPress={()=>this.goToEventPage()}>
                   <Text style={styles.btnText}>Join</Text>
                 </TouchableHighlight>
               </View>
@@ -105,7 +114,7 @@ export default class Feed extends React.Component {
                   <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/backpack.png')}/>
                 </View>
                 <Text style={styles.host}>lena</Text>
-                <Text style={styles.date}>Thursday, July 27-Saturday, August 5</Text>
+                <Text style={styles.date}>Friday, June 9-Saturday, June 17</Text>
                 <Text style={styles.location}>Glacier National Park, MT</Text>
                 <View style={{flexDirection:"row"}}>
                   <Text style={styles.summary}>Long trip in the park with bears</Text>
@@ -156,7 +165,7 @@ export default class Feed extends React.Component {
                 <Text style={styles.date}>August?</Text>
                 <Text style={styles.location}>Nederland</Text>
                 <View style={{flexDirection:"row"}}>
-                  <Text style={styles.summary}>Let$#36;s go camping for my birthday!</Text>
+                  <Text style={styles.summary}>Let&#39;s go camping for my birthday!</Text>
                   <TouchableHighlight
                     style={styles.btn}>
                     <Text style={styles.btnText}>Join</Text>
@@ -179,15 +188,12 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: '#7DA46D',
-    paddingBottom: 50
+    paddingBottom: 40
   },
   list: {
-    backgroundColor: 'rgba(250, 250, 250, 0.72)',
+    backgroundColor: 'rgba(250, 250, 250, 0.6)',
     color: '#FBFBFB',
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 5,
-    marginTop:5,
+    marginBottom: 2,
     height: 150,
   },
   title:{
@@ -206,7 +212,7 @@ const styles = StyleSheet.create({
   img:{
     position: "absolute",
     top: 50,
-    right: 0,
+    right: 5,
     width: 40,
     height: 40,
   },
@@ -239,7 +245,7 @@ const styles = StyleSheet.create({
     padding: 5,
     position: "absolute",
     bottom: 0,
-    right: 0,
+    right: 5,
     backgroundColor: 'rgba(87, 41, 84, 0.72)',
     justifyContent: "center",
   },

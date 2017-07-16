@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, ScrollView, TouchableHighlight} from 'react-native';
 
 import AddEvent from './AddEvent';
 import Feed from './Feed';
@@ -39,6 +39,13 @@ export default class Home extends React.Component {
       title: "Create an Event"
     })
   }
+  
+  goToEventPage(){
+    this.props.navigator.push({
+      component: EventPage,
+      title: "Trip Page"
+    })
+  }
   render() {
     return (
       <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
@@ -47,14 +54,29 @@ export default class Home extends React.Component {
             <Text style={{fontSize: 20,color: '#FBFBFB'}}>
             Hi Lena!</Text>
           </View>
+
           <View style={styles.body}>
-            <Text style={styles.list}>
-              Events you hosted:
-            </Text>
-            <Text style={styles.list}>
-              Events you attended:
+            <Text style={{margin:10, fontSize:16, color: '#FBFBFB'}}>
+              Upcoming Events:
             </Text>
           </View>
+
+          <View style={styles.body}>
+            <Text style={{margin:10, fontSize:16, color: '#FBFBFB'}}>
+              Events you hosted:
+            </Text>
+            <View style={styles.list}>
+                <Text style={styles.title}>Sleeping outside</Text>
+                <Text style={styles.date}>Friday, June 9-Saturday, June 17</Text>
+                <Text style={styles.location}>Glacier National Park, MT</Text>
+              </View>
+            </View>
+            <View style={styles.body}>
+              <Text style={{margin: 10, fontSize:16, color: '#FBFBFB'}}>
+                Events you attended:
+              </Text>
+          </View>
+
         </ScrollView>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
       </Image>
@@ -82,14 +104,42 @@ const styles = StyleSheet.create({
     alignItems: "center",
     },
   list: {
-    backgroundColor: 'rgba(126, 165, 111, 0.3)',
+    backgroundColor: 'rgba(250, 250, 250, 0.6)',
     color: '#FBFBFB',
+    marginBottom: 5,
+    height: 80,
+    padding:10
+  },
+  title:{
+    fontSize: 16
+  },
+  host:{
+    fontSize:10,
+  },
+  date:{
+    fontSize:16
+  },
+  img:{
+    position: "absolute",
+    top: 20,
+    right: 0,
+    width: 40,
+    height: 40,
+  },
+  location:{
+    fontSize:14,
+    marginBottom: 5
+  },
+  btnText: {
     fontSize: 16,
-    padding: 10,
-    marginLeft: 10,
-    marginRight: 10,
-    marginBottom: 10,
-    height: 120,
-    position: 'relative',
-  }
+    color: '#FBFBFB'
+  },
+  btn: {
+    padding: 5,
+    position: "absolute",
+    bottom: 0,
+    right: 0,
+    backgroundColor: 'rgba(87, 41, 84, 0.72)',
+    justifyContent: "center",
+  },
 });

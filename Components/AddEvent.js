@@ -48,10 +48,10 @@ export default class AddEvent extends React.Component {
   }
   render() {
     return (
+      <View style={styles.mainContainer}>
       <ScrollView
         contentContainerStyle={styles.container}
         keyboardDismissMode="interactive">
-        <ScrollView style={styles.container}>
           <Form
             style={styles.form}
             ref='newEventForm'
@@ -102,14 +102,17 @@ export default class AddEvent extends React.Component {
             <Text style={styles.btnText}>Create Event</Text>
           </TouchableHighlight>
         </ScrollView>
-          <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
-      </ScrollView>
+        <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
+      </View>
     );
   }
 }
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex:1,
+    backgroundColor: '#7DA46D',
+  },
+  container:{
     backgroundColor: '#7DA46D',
   },
   form:{
