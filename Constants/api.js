@@ -7,9 +7,7 @@ class Api {
     this.path = `/posts`;
   }
   async fetchPosts(){
-    console.log('hit fetch route');
     const data = await axios.get(this.path)
-    console.log("api line 12",data.data);
     return data.data
   }
 }
