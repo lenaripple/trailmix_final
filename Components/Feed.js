@@ -35,7 +35,6 @@ export default class Feed extends React.Component {
     this.setState({loading: false, posts})
     console.log('state line 36',this.state);
   }
-
   goToFeed(){
     this.props.navigator.push({
       component: Feed,
@@ -71,7 +70,7 @@ export default class Feed extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <EventsList posts={this.state.posts} />
-        
+
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
       </View>
     );
