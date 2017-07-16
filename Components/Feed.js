@@ -1,5 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
+import {Api} from '../Constants/api'
 
 import AddEvent from './AddEvent';
 import Login from './Login';
@@ -8,6 +9,7 @@ import Home from './Home';
 import Search from './Search';
 import EventPage from './EventPage';
 
+const api = new Api()
 
 export default class Feed extends React.Component {
   constructor(){
@@ -16,6 +18,22 @@ export default class Feed extends React.Component {
     this.goToSearch = this.goToSearch.bind(this)
     this.goToFeed = this.goToFeed.bind(this)
     this.goToAddEvent = this.goToAddEvent.bind(this)
+  }
+
+  static defaultProps = {
+    api
+  }
+  state = {
+    loading: false,
+    posts: []
+  }
+  componentDidMount(){
+    this.setState({loading:true})
+    this.props.api.fetchPosts().then(data=>{
+      console.log('feed line 34',data);
+      this.setState({loading: false, posts: data})
+      console.log(this.state.posts);
+    })
   }
 
   goToFeed(){

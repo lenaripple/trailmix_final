@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Linking, Button,  NavigatorIOS } from 'react-native';
 
-// import Login from './Components/Login';
 import Splash from './Components/Splash';
 
 export default class App extends React.Component {

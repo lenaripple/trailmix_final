@@ -1,17 +1,20 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://trailmix-backend.herokuapp.com'
-
-class api {
+axios.defaults.baseURL = 'https://trailmix-backend.herokuapp.com/api/v1'
+// 'mongodb://heroku_g6cmp0qw:ee953ghad3t5pp149m7etmilef@ds157702.mlab.com:57702/heroku_g6cmp0qw'
+class Api {
   constructor(){
-    this.path = '/'
+    this.path = `/posts`;
   }
   async fetchPosts(){
-    const {data} = await axios.get(this.path)
-    console.log('hit feth route');
-    return data.posts
+    console.log('hit fetch route');
+    const data = await axios.get(this.path)
+    console.log("api line 12",data.data);
+    return data.data
   }
 }
 
 
-export api;
+export {
+  Api
+};
