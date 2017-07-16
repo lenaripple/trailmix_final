@@ -44,39 +44,32 @@ export default class Feed extends React.Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <ScrollView style={styles.container}>
-          <View style={styles.list}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.title}>Weekend trip to the mountains</Text>
-              <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/backpack.png')}/>
+        <ScrollView contentContainerStyle={styles.container}>
+
+        <View style={styles.list}>
+          <Image
+            style={styles.background}
+            resizeMode="cover"
+            source={require('./Images/climb.jpg')}>
+            <View style={styles.overlay}>
+              <View style={{flexDirection:"row"}}>
+                <Text style={styles.title}>Morning climbing</Text>
+                <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/rope.png')}/>
+              </View>
+              <Text style={styles.host}>mat</Text>
+              <Text style={styles.date}>Thursday, July 27</Text>
+              <Text style={styles.location}>Boulder Canyon</Text>
+              <View style={{flexDirection:"row"}}>
+                <Text style={styles.summary}>Going to Eater Rock - 11s and 12s</Text>
+                <TouchableHighlight
+                  style={styles.btn}>
+                  <Text style={styles.btnText}>Join</Text>
+                </TouchableHighlight>
+              </View>
             </View>
-            <Text style={styles.host}>jimmy</Text>
-            <Text style={styles.date}>Saturday, July 22</Text>
-            <Text style={styles.location}>Brainard Lake, CO</Text>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.summary}>About 10 miles each way, fairly strenuous</Text>
-              <TouchableHighlight
-                style={styles.btn}>
-                <Text style={styles.btnText}>Join</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
-          <View style={styles.list}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.title}>Climbing - morning</Text>
-              <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/rope.png')}/>
-            </View>
-            <Text style={styles.host}>mat</Text>
-            <Text style={styles.date}>Sunday, July 23</Text>
-            <Text style={styles.location}>Boulder Canyon</Text>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.summary}>Hoping to get on some 10s and 11s</Text>
-              <TouchableHighlight
-                style={styles.btn}>
-                <Text style={styles.btnText}>Join</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
+          </Image>
+        </View>
+
           <View style={styles.list}>
             <Image
               style={styles.background}
@@ -84,14 +77,14 @@ export default class Feed extends React.Component {
               source={require('./Images/hiking.jpg')}>
               <View style={styles.overlay}>
                 <View style={{flexDirection:"row"}}>
-                  <Text style={styles.title}>hiking!</Text>
+                  <Text style={styles.title}>long day hike</Text>
                   <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/boot.png')}/>
                 </View>
-                <Text style={styles.host}>lena</Text>
-                <Text style={styles.date}>Thursday, July 27</Text>
-                <Text style={styles.location}>Boulder, CO</Text>
+                <Text style={styles.host}>thebob</Text>
+                <Text style={styles.date}>Saturday, August 12</Text>
+                <Text style={styles.location}>Indian Peaks Wilderness</Text>
                 <View style={{flexDirection:"row"}}>
-                  <Text style={styles.summary}>Hoping to do Bear Peak/South Boulder Peak</Text>
+                  <Text style={styles.summary}>Pawnee Pass - it should be melted</Text>
                   <TouchableHighlight
                     style={styles.btn}>
                     <Text style={styles.btnText}>Join</Text>
@@ -100,70 +93,79 @@ export default class Feed extends React.Component {
               </View>
             </Image>
           </View>
+
           <View style={styles.list}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.title}>Chill lil overnight</Text>
-              <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/bonfire.png')}/>
-            </View>
-            <Text style={styles.host}>dana</Text>
-            <Text style={styles.date}>Saturday, August 12-Sunday, August 13</Text>
-            <Text style={styles.location}>Secret spot</Text>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.summary}>Camping, smores, ghost stories</Text>
-              <TouchableHighlight
-                style={styles.btn}>
-                <Text style={styles.btnText}>Join</Text>
-              </TouchableHighlight>
-            </View>
+            <Image
+              style={styles.background}
+              resizeMode="cover"
+              source={require('./Images/backpack.jpg')}>
+              <View style={styles.overlay}>
+                <View style={{flexDirection:"row"}}>
+                  <Text style={styles.title}>Sleeping outside</Text>
+                  <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/backpack.png')}/>
+                </View>
+                <Text style={styles.host}>lena</Text>
+                <Text style={styles.date}>Thursday, July 27-Saturday, August 5</Text>
+                <Text style={styles.location}>Glacier National Park, MT</Text>
+                <View style={{flexDirection:"row"}}>
+                  <Text style={styles.summary}>Long trip in the park with bears</Text>
+                  <TouchableHighlight
+                    style={styles.btn}>
+                    <Text style={styles.btnText}>Join</Text>
+                  </TouchableHighlight>
+                </View>
+              </View>
+            </Image>
           </View>
+
           <View style={styles.list}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.title}>Escape the heat!</Text>
-              <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/rope.png')}/>
-            </View>
-            <Text style={styles.host}>alex</Text>
-            <Text style={styles.date}>Saturday, August 12</Text>
-            <Text style={styles.location}>Ten Sleep, WY</Text>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.summary}>Climbing is better when it&#39;s not 100 degrees</Text>
-              <TouchableHighlight
-                style={styles.btn}>
-                <Text style={styles.btnText}>Join</Text>
-              </TouchableHighlight>
-            </View>
+            <Image
+              style={styles.background}
+              resizeMode="cover"
+              source={require('./Images/climb.jpg')}>
+              <View style={styles.overlay}>
+                <View style={{flexDirection:"row"}}>
+                  <Text style={styles.title}>send fest</Text>
+                  <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/rope.png')}/>
+                </View>
+                <Text style={styles.host}>jimmy</Text>
+                <Text style={styles.date}>Satuday, August 26-Monday, August 28</Text>
+                <Text style={styles.location}>Ten Sleep, WY</Text>
+                <View style={{flexDirection:"row"}}>
+                  <Text style={styles.summary}>Getting up to WY to crush some routes!</Text>
+                  <TouchableHighlight
+                    style={styles.btn}>
+                    <Text style={styles.btnText}>Join</Text>
+                  </TouchableHighlight>
+                </View>
+              </View>
+            </Image>
           </View>
+
           <View style={styles.list}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.title}>Day hike</Text>
-              <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/boot.png')}/>
-            </View>
-            <Text style={styles.host}>thebob</Text>
-            <Text style={styles.date}>Saturday, July 22</Text>
-            <Text style={styles.location}>Indian Peaks Wilderness</Text>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.summary}>Pawnee Pass - it&#39;s tough!</Text>
-              <TouchableHighlight
-                style={styles.btn}>
-                <Text style={styles.btnText}>Join</Text>
-              </TouchableHighlight>
-            </View>
+            <Image
+              style={styles.background}
+              resizeMode="cover"
+              source={require('./Images/camp.jpg')}>
+              <View style={styles.overlay}>
+                <View style={{flexDirection:"row"}}>
+                  <Text style={styles.title}>birthday trip</Text>
+                  <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/bonfire.png')}/>
+                </View>
+                <Text style={styles.host}>ali</Text>
+                <Text style={styles.date}>August?</Text>
+                <Text style={styles.location}>Nederland</Text>
+                <View style={{flexDirection:"row"}}>
+                  <Text style={styles.summary}>Let$#36;s go camping for my birthday!</Text>
+                  <TouchableHighlight
+                    style={styles.btn}>
+                    <Text style={styles.btnText}>Join</Text>
+                  </TouchableHighlight>
+                </View>
+              </View>
+            </Image>
           </View>
-          <View style={styles.list}>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.title}>Birthday bash</Text>
-              <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/bonfire.png')}/>
-            </View>
-            <Text style={styles.host}>ali</Text>
-            <Text style={styles.date}>Saturday, August 26</Text>
-            <Text style={styles.location}>Telluride, CO</Text>
-            <View style={{flexDirection:"row"}}>
-              <Text style={styles.summary}>Beer, camping, via ferrata</Text>
-              <TouchableHighlight
-                style={styles.btn}>
-                <Text style={styles.btnText}>Join</Text>
-              </TouchableHighlight>
-            </View>
-          </View>
+
         </ScrollView>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
       </View>
@@ -173,11 +175,11 @@ export default class Feed extends React.Component {
 
 const styles = StyleSheet.create({
   mainContainer:{
-    flex:1
+    flex:1,
   },
   container: {
-    flex:1,
     backgroundColor: '#7DA46D',
+    paddingBottom: 50
   },
   list: {
     backgroundColor: 'rgba(250, 250, 250, 0.72)',
