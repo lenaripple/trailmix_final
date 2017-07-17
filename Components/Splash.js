@@ -20,7 +20,7 @@ export default class Splash extends React.Component {
           <TouchableHighlight
             style={styles.btn}
             onPress={()=> this.goToLogin()}
-            underlayColor="none">
+            underlayColor="transparent">
             <Text style={styles.btnText}>Get Started</Text>
           </TouchableHighlight>
         </View>

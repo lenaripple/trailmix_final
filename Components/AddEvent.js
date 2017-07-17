@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40
   },
   form:{
-    color: '#FBFBFB',
+    // color: '#FBFBFB',
     margin: 10,
   },
   btnText: {

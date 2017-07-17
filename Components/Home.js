@@ -39,7 +39,7 @@ export default class Home extends React.Component {
       title: "Create an Event"
     })
   }
-  
+
   goToEventPage(){
     this.props.navigator.push({
       component: EventPage,
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   profile:{
-    color: '#FBFBFB',
+    // color: '#FBFBFB',
     marginLeft: 10,
     marginRight: 10,
     marginTop:64,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     },
   list: {
     backgroundColor: 'rgba(250, 250, 250, 0.6)',
-    color: '#FBFBFB',
+    // color: '#FBFBFB',
     marginBottom: 5,
     height: 80,
     padding:10
