@@ -1,17 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight, ScrollView } from 'react-native';
-
 import { Form,
   Separator,InputField, LinkField,
   SwitchField, PickerField,DatePickerField,TimePickerField
   } from 'react-native-form-generator';
-
 import Feed from './Feed';
 import NavMenu from './NavMenu';
 import Home from './Home';
 import Search from './Search';
 
+import {PostApi} from '../Constants/api'
 
+const postapi = new PostApi()
+// var slicedDate=''
 
 export default class AddEvent extends React.Component {
   constructor(){
@@ -20,6 +21,36 @@ export default class AddEvent extends React.Component {
     this.goToSearch = this.goToSearch.bind(this)
     this.goToFeed = this.goToFeed.bind(this)
     this.goToAddEvent = this.goToAddEvent.bind(this)
+    this.state = {title: '', date:'', location: '', description: '', extra: ''}
+  }
+
+  static defaultProps = {
+    postapi
+  }
+
+  state = {
+    loading: false,
+    post: []
+  }
+
+  handleSubmit(){
+    const newTitle = this.refs.newEventForm.values.title
+    const newDate = this.refs.newEventForm.values.date.toString()
+    const newLocation = this.refs.newEventForm.values.location
+    const newActivity = this.refs.newEventForm.values.activity
+    const newDescription = this.refs.newEventForm.values.description
+    const newExtra = this.refs.newEventForm.values.extra
+    const newData = {};
+
+    newData['_title']=newTitle;
+    newData['date']=newDate;
+    newData['location']=newLocation;
+    newData['activity']=newActivity;
+    newData['description']=newDescription;
+    newData['extra']=newExtra;
+
+    this.props.postapi.createPosts(newData)
+    this.goToFeed()
   }
 
   goToFeed(){
@@ -72,17 +103,18 @@ export default class AddEvent extends React.Component {
             <PickerField
               label='Primary Activity'
               options={{
+                "":"",
                 "hiking":'Hiking',
                 "backpacking": 'Backpacking',
                 "climbing": 'Climbing',
-                "camping": 'camping',
+                "camping": 'Camping',
                 "other": 'Something else'
               }}
             />
             <InputField
               ref="other"
               multiline={true}
-              placeholder="If you selected 'something else', tell us what."
+              placeholder="If 'something else', tell us what."
             />
             <InputField
               ref="description"
@@ -97,7 +129,7 @@ export default class AddEvent extends React.Component {
           </Form>
           <TouchableHighlight
             style={styles.btn}
-            onPress={this.goToFeed}
+            onPress={this.handleSubmit.bind(this)}
             underlayColor="white">
             <Text style={styles.btnText}>Create Event</Text>
           </TouchableHighlight>

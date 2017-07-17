@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput, TouchableHighlight } from 'react-native';
-import {Api} from '../Constants/api'
+import {PostApi} from '../Constants/api'
 
 import AddEvent from './AddEvent';
 import Login from './Login';
@@ -10,7 +10,7 @@ import Search from './Search';
 import EventPage from './EventPage';
 import EventsList from './EventsList';
 
-const api = new Api()
+const postapi = new PostApi()
 
 export default class Feed extends React.Component {
   constructor(){
@@ -22,7 +22,7 @@ export default class Feed extends React.Component {
   }
 
   static defaultProps = {
-    api
+    postapi
   }
 
   state = {
@@ -32,9 +32,8 @@ export default class Feed extends React.Component {
 
   async componentDidMount(){
     this.setState({loading: true})
-    const posts = await this.props.api.fetchPosts()
+    const posts = await this.props.postapi.fetchPosts()
     this.setState({loading: false, posts})
-    console.log('state line 36',this.state);
   }
 
   goToFeed(){

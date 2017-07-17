@@ -11,7 +11,7 @@ const EventsList = ({posts})=> (
             <Image resizeMode="contain" style={styles.img} source={require('./Images/camping/png/rope.png')}/>
           </View>
             <Text style={styles.host}>Host: {post.user.username}</Text>
-            <Text style={styles.date}>{post.date}</Text>
+            <Text style={styles.date}>{post.date.slice(5,7)}/{post.date.slice(8,10)}/{post.date.slice(0,4)}</Text>
             <Text style={styles.location}>{post.location}</Text>
           <View style={{flexDirection:"row"}}>
             <Text style={styles.summary}>{post.description}</Text>

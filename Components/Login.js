@@ -3,8 +3,15 @@ import { StyleSheet, Text, View, Image, Linking, Button, NavigatorIOS, TextInput
 import Splash from './Splash';
 import Feed from './Feed';
 import SignUp from './SignUp';
+import {UserApi} from '../Constants/api'
+
+const userapi = new UserApi()
 
 export default class LogIn extends React.Component {
+
+  static defaultProps = {
+    userapi
+  }
 
   goToFeed(){
     this.props.navigator.push({
