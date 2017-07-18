@@ -71,6 +71,17 @@ export default class Home extends React.Component {
                   <Text style={styles.btnText}>View Details</Text>
                 </TouchableHighlight>
               </View>
+              <View style={styles.list}>
+                  <Text style={styles.title}>Post-capstone trip</Text>
+                  <Text style={styles.date}>07/21/2017</Text>
+                  <Text style={styles.location}>Golden, CO</Text>
+                  <TouchableHighlight
+                    style={styles.btn}
+                    onPress={()=>this.goToEventPage()}
+                    >
+                    <Text style={styles.btnText}>View Details</Text>
+                  </TouchableHighlight>
+                </View>
             </View>
 
           <View style={styles.body}>

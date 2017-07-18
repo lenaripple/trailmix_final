@@ -54,12 +54,10 @@ export default class EventPage extends React.Component {
             <View style={styles.list}>
                 <Text style={styles.date}>07/22/2017</Text>
                 <Text style={styles.location}>Indian Peaks Wilderness</Text>
-                // <Text style={styles.location}>Ward, CO</Text>
                 <Text style={styles.extra}>Description:</Text>
-                <Text style={styles.extraText}>Let&#39;s do stuff in the sunshine</Text>
+                <Text style={styles.extraText}>Let&#39;s go hiking in the sunshine</Text>
                 <Text style={styles.extra}>Extra information:</Text>
-                <Text style={styles.extraText}>Bring: sunscreen, water, warm layer.
-                Needs: carpooling plan</Text>
+                <Text style={styles.extraText}>Need carpool volunteers</Text>
               </View>
 
           </View>
