@@ -107,31 +107,31 @@ const styles = StyleSheet.create({
     padding:10
   },
   title:{
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
   },
   host:{
-    fontSize:14,
+    fontSize:16,
   },
   date:{
-    fontSize:14,
+    fontSize:16,
     color: '#FBFBFB',
     marginBottom: 5,
   },
   location:{
-    fontSize:14,
+    fontSize:16,
     marginBottom: 5,
     color: '#FBFBFB',
     fontWeight: "bold",
   },
   extra:{
     fontWeight: "bold",
-    fontSize:14,
+    fontSize:16,
     marginBottom: 5,
     color: '#FBFBFB'
   },
   extraText:{
-    fontSize:12,
+    fontSize:16,
     marginBottom: 5,
     color: '#FBFBFB'
   },

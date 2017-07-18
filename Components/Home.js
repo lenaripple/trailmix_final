@@ -52,8 +52,8 @@ export default class Home extends React.Component {
       <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
         <ScrollView style={styles.overlay}>
           <View style={styles.profile}>
-            <Text style={{fontSize: 20,color: '#FBFBFB'}}>
-            Hi Lena!</Text>
+            <Text style={{fontSize: 22,color: '#FBFBFB'}}>
+            Hi, Lena!</Text>
           </View>
 
           <View style={styles.body}>

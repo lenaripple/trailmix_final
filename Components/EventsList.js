@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   list: {
     marginBottom: 4,
     height: 150,
-    backgroundColor: 'rgba(250,250,250,.5)',
+    backgroundColor: 'rgba(250,250,250,.6)',
   },
   title:{
     paddingLeft:5,

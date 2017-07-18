@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     height: undefined,
   },
   overlay: {
-    backgroundColor: 'rgba(0,0,0,.5)',
+    backgroundColor: 'rgba(0,0,0,.55)',
     height: '100%',
     width: '100%',
     alignItems: 'center',
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     margin:29,
     height: 40,
     flexDirection: 'row',
-    backgroundColor: 'rgba(126, 165, 111, 0.63)',
+    backgroundColor: 'rgba(126, 165, 111, 0.7)',
     alignSelf: 'stretch',
     justifyContent: 'center'
   }
