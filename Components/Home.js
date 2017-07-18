@@ -62,7 +62,7 @@ export default class Home extends React.Component {
             </Text>
             <View style={styles.list}>
                 <Text style={styles.title}>Epic Mountain Day</Text>
-                <Text style={styles.date}>Saturday, July 22</Text>
+                <Text style={styles.date}>07/22/2017</Text>
                 <Text style={styles.location}>Indian Peaks Wilderness</Text>
                 <TouchableHighlight
                   style={styles.btn}
@@ -179,8 +179,8 @@ const styles = StyleSheet.create({
   btn: {
     padding: 5,
     position: "absolute",
-    bottom: 0,
-    right: 0,
+    bottom: 5,
+    right: 5,
     backgroundColor: 'rgba(87, 41, 84, 0.72)',
     justifyContent: "center",
   },

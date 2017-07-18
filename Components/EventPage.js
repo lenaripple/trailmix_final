@@ -52,14 +52,30 @@ export default class EventPage extends React.Component {
         </View>
           <View style={styles.body}>
             <View style={styles.list}>
-                <Text style={styles.date}>Saturday, July 22</Text>
+                <Text style={styles.date}>07/22/2017</Text>
                 <Text style={styles.location}>Indian Peaks Wilderness</Text>
-                <Text style={styles.location}>Ward, CO</Text>
+                // <Text style={styles.location}>Ward, CO</Text>
+                <Text style={styles.extra}>Description:</Text>
+                <Text style={styles.extraText}>Let&#39;s do stuff in the sunshine</Text>
                 <Text style={styles.extra}>Extra information:</Text>
-                <Text style={styles.extraText}>Prime backcountry mountain season is upon us!  We can go for a hike, summit Pawnee Peak and maybe see some critters.</Text>
-                <Text style={styles.extraText}>Bring: comfortable shoes, sunscreen, water, warm layer.
+                <Text style={styles.extraText}>Bring: sunscreen, water, warm layer.
                 Needs: carpooling plan</Text>
               </View>
+
+          </View>
+          <View style={{flexDirection:"row", justifyContent:"space-around"}}>
+            <View>
+            <TouchableHighlight
+              style={styles.btn}>
+              <Text style={styles.btnText}>Edit Trip</Text>
+            </TouchableHighlight>
+            </View>
+            <View>
+            <TouchableHighlight
+              style={styles.btn}>
+              <Text style={styles.btnText}>Delete Trip</Text>
+            </TouchableHighlight>
+            </View>
           </View>
         </ScrollView>
         <NavMenu goFeed={this.goToFeed} goAddEvent={this.goToAddEvent} goHome={this.goToHome} goSearch={this.goToSearch}/>
@@ -120,5 +136,16 @@ const styles = StyleSheet.create({
     fontSize:12,
     marginBottom: 5,
     color: '#FBFBFB'
+  },
+  btnText: {
+    fontSize: 18,
+    color: '#FBFBFB'
+  },
+  btn: {
+    alignItems: "center",
+    width: 150,
+    padding: 10,
+    marginTop:275,
+    backgroundColor: 'rgba(126, 165, 111, 0.63)',
   },
 });
