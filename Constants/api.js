@@ -2,7 +2,8 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://trailmix-backend.herokuapp.com/api/v1/';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-axios.defaults.headers.common['Authorization'] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OTY5MDIzZjM5YmI4YjAwMTFlNTU5MzgiLCJpYXQiOjE1MDAzMjU3Mjh9.XLhJacduosfbiqKYse827ZHx_rHit0XzOBO9ss2nfDU';
+//logged in as ripplelena
+axios.defaults.headers.common['Authorization'] = 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OTY4ZjA1ZjBjZGNmOTAwMTFlOWRiMjIiLCJpYXQiOjE1MDAzODc2ODZ9.q51IAeCZoQaRqUG6cJswSetG2zqPIRAnsJwmZWJtWT4';
 
 class PostApi {
   constructor(){

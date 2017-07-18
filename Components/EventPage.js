@@ -53,9 +53,12 @@ export default class EventPage extends React.Component {
           <View style={styles.body}>
             <View style={styles.list}>
                 <Text style={styles.date}>Saturday, July 22</Text>
-                <Text style={styles.location}>Indian Peaks Wilderness, Ward, CO</Text>
+                <Text style={styles.location}>Indian Peaks Wilderness</Text>
+                <Text style={styles.location}>Ward, CO</Text>
                 <Text style={styles.extra}>Extra information:</Text>
-                <Text style={styles.extraText}></Text>
+                <Text style={styles.extraText}>Prime backcountry mountain season is upon us!  We can go for a hike, summit Pawnee Peak and maybe see some critters.</Text>
+                <Text style={styles.extraText}>Bring: comfortable shoes, sunscreen, water, warm layer.
+                Needs: carpooling plan</Text>
               </View>
           </View>
         </ScrollView>
@@ -69,6 +72,7 @@ const styles = StyleSheet.create({
   Splash: {
     width: undefined,
     height: '100%',
+    paddingBottom:45
   },
   overlay: {
     backgroundColor: 'rgba(0,0,0,.35)',

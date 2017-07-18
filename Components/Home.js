@@ -79,7 +79,7 @@ export default class Home extends React.Component {
             </Text>
             <View style={styles.list}>
                 <Text style={styles.title}>Epic Mountain Day</Text>
-                <Text style={styles.date}>Saturday, July 22</Text>
+                <Text style={styles.date}>07/22/2017</Text>
                 <Text style={styles.location}>Indian Peaks Wilderness</Text>
                 <TouchableHighlight
                   style={styles.btn}
@@ -88,12 +88,34 @@ export default class Home extends React.Component {
                   <Text style={styles.btnText}>View Details</Text>
                 </TouchableHighlight>
               </View>
+              <View style={styles.list}>
+                  <Text style={styles.title}>Climbing trip</Text>
+                  <Text style={styles.date}>08/10/2017</Text>
+                  <Text style={styles.location}>Ten Sleep, WY</Text>
+                  <TouchableHighlight
+                    style={styles.btn}
+                    onPress={()=>this.goToEventPage()}
+                    >
+                    <Text style={styles.btnText}>View Details</Text>
+                  </TouchableHighlight>
+                </View>
           </View>
 
             <View style={styles.body}>
               <Text style={{margin: 10, fontSize:16, color: '#FBFBFB'}}>
                 Events you attended:
               </Text>
+              <View style={styles.list}>
+                  <Text style={styles.title}>Morning walk</Text>
+                  <Text style={styles.date}>07/18/2017</Text>
+                  <Text style={styles.location}>Denver, CO</Text>
+                  <TouchableHighlight
+                    style={styles.btn}
+                    onPress={()=>this.goToEventPage()}
+                    >
+                    <Text style={styles.btnText}>View Details</Text>
+                  </TouchableHighlight>
+                </View>
           </View>
 
         </ScrollView>
@@ -107,6 +129,7 @@ const styles = StyleSheet.create({
   Splash: {
     width: undefined,
     height: undefined,
+    paddingBottom:45
   },
   overlay: {
     backgroundColor: 'rgba(0,0,0,.35)',
