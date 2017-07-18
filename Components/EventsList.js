@@ -42,16 +42,16 @@ const styles = StyleSheet.create({
   },
   title:{
     paddingLeft:5,
-    marginTop: 50,
+    marginTop: 40,
     fontSize: 18
   },
   host:{
     paddingLeft:5,
-    fontSize:10,
+    fontSize:12,
   },
   date:{
     paddingLeft:5,
-    fontSize:16
+    fontSize:14
   },
   img:{
     position: "absolute",
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   summary:{
     paddingLeft:5,
-    fontSize: 12,
+    fontSize: 14,
   },
   btnText: {
     fontSize: 18,

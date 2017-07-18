@@ -5,6 +5,7 @@ import AddEvent from './AddEvent';
 import Feed from './Feed';
 import NavMenu from './NavMenu';
 import Search from './Search';
+import EventPage from './EventPage';
 
 export default class Home extends React.Component {
   constructor(){
@@ -57,20 +58,38 @@ export default class Home extends React.Component {
 
           <View style={styles.body}>
             <Text style={{margin:10, fontSize:16, color: '#FBFBFB'}}>
-              Upcoming Events:
+              Your Events:
             </Text>
-          </View>
+            <View style={styles.list}>
+                <Text style={styles.title}>Epic Mountain Day</Text>
+                <Text style={styles.date}>Saturday, July 22</Text>
+                <Text style={styles.location}>Indian Peaks Wilderness</Text>
+                <TouchableHighlight
+                  style={styles.btn}
+                  onPress={()=>this.goToEventPage()}
+                  >
+                  <Text style={styles.btnText}>View Details</Text>
+                </TouchableHighlight>
+              </View>
+            </View>
 
           <View style={styles.body}>
             <Text style={{margin:10, fontSize:16, color: '#FBFBFB'}}>
-              Events you hosted:
+              Upcoming Events:
             </Text>
             <View style={styles.list}>
-                <Text style={styles.title}>Sleeping outside</Text>
-                <Text style={styles.date}>Friday, June 9-Saturday, June 17</Text>
-                <Text style={styles.location}>Glacier National Park, MT</Text>
+                <Text style={styles.title}>Epic Mountain Day</Text>
+                <Text style={styles.date}>Saturday, July 22</Text>
+                <Text style={styles.location}>Indian Peaks Wilderness</Text>
+                <TouchableHighlight
+                  style={styles.btn}
+                  onPress={()=>this.goToEventPage()}
+                  >
+                  <Text style={styles.btnText}>View Details</Text>
+                </TouchableHighlight>
               </View>
-            </View>
+          </View>
+
             <View style={styles.body}>
               <Text style={{margin: 10, fontSize:16, color: '#FBFBFB'}}>
                 Events you attended:
