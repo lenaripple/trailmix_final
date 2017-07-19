@@ -15,8 +15,10 @@ export default class Splash extends React.Component {
     return (
       <Image source={require('./Images/login-background.jpg')} style={styles.Splash}>
         <View style={styles.overlay}>
-          <Text style={styles.header}>trailMix</Text>
-          <Text style={styles.text}>Find friends for every adventure</Text>
+        <Image
+          style={styles.logo}
+          resizeMode="contain"
+          source={require('./Images/trailmix_logo2.png')}/>
           <TouchableHighlight
             style={styles.btn}
             onPress={()=> this.goToLogin()}
@@ -35,6 +37,10 @@ const styles = StyleSheet.create({
     color: '#FBFBFB',
     fontWeight: 'bold',
     opacity: 1
+  },
+  logo:{
+    width: '50%',
+    height:'40%'
   },
   text: {
     fontSize: 22,
@@ -56,14 +62,14 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontSize: 18,
-    color: '#FBFBFB',
+    color: '#11540A',
     alignSelf: 'center',
   },
   btn: {
     margin:29,
     height: 40,
     flexDirection: 'row',
-    backgroundColor: 'rgba(126, 165, 111, 0.7)',
+    backgroundColor: 'rgba(250, 250, 250, 0.6)',
     alignSelf: 'stretch',
     justifyContent: 'center'
   }

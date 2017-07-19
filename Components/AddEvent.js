@@ -12,7 +12,6 @@ import Search from './Search';
 import {PostApi} from '../Constants/api'
 
 const postapi = new PostApi()
-// var slicedDate=''
 
 export default class AddEvent extends React.Component {
   constructor(){
@@ -49,9 +48,27 @@ export default class AddEvent extends React.Component {
     newData['description']=newDescription;
     newData['extra']=newExtra;
 
-    this.props.postapi.createPosts(newData)
+    console.log(newData);
+    this.activityImages(newData);
+    console.log(newData);
+    console.log('kjhkjf');
+    this.props.postapi.createPosts(newData);
     this.goToFeed()
   }
+
+  activityImages(newData){
+      if (newData.activity === "hiking"){
+        newData['activity']='./Images/camping/png/boot.png'
+      } else if (newData.activity==="climbing"){
+        newData['activity']='./Images/camping/png/rope.png'
+      } else if (newData.activity==="backpacking"){
+        newData['activity']='./Images/camping/png/backpack.png'
+      } else if(newData.activity==="camping"){
+        newData['activity']='./Images/camping/png/bonfire.png'
+      } else {
+        newData['activity']='./Images/camping/png/mountain.png'
+      }
+  };
 
   goToFeed(){
     this.props.navigator.push({
@@ -102,6 +119,7 @@ export default class AddEvent extends React.Component {
             />
             <PickerField
               label='Primary Activity'
+              ref="activity"
               options={{
                 "":"",
                 "hiking":'Hiking',
@@ -146,6 +164,7 @@ const styles = StyleSheet.create({
   },
   container:{
     backgroundColor: '#7DA46D',
+    paddingTop: 5,
     paddingBottom: 40
   },
   form:{

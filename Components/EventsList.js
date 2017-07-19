@@ -17,7 +17,6 @@ const EventsList = ({posts})=> (
             <Text style={styles.summary}>{post.description}</Text>
             <TouchableHighlight
               style={styles.btn}
-              // onPress={this.props.goEventPage}
               >
               <Text style={styles.btnText}>Join</Text>
             </TouchableHighlight>
