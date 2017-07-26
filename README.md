@@ -2,9 +2,9 @@
 # trailMix
 ## ingredients for adventure
 
-### This is a capstone project for the Galvanize Web Development Immersive and a work in progress.
+This is a capstone project for the Galvanize Web Development Immersive and a work in progress.
 
-### Watch a video (https://www.youtube.com/watch?v=u1G2psbj_ok&feature=youtu.be "here").
+### Watch a video [here] (https://www.youtube.com/watch?v=u1G2psbj_ok&feature=youtu.be).
 
 ### Run the app in the Expo simulator with `npm start` or `yarn start`
 
