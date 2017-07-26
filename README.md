@@ -4,7 +4,7 @@
 
 This is a capstone project for the Galvanize Web Development Immersive and a work in progress.
 
-### Watch a video [here] (https://www.youtube.com/watch?v=u1G2psbj_ok&feature=youtu.be).
+Watch a video [here] (https://www.youtube.com/watch?v=u1G2psbj_ok&feature=youtu.be).
 
 ### Run the app in the Expo simulator with `npm start` or `yarn start`
 
